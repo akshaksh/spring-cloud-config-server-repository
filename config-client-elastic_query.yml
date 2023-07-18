@@ -14,6 +14,15 @@ spring:
         jwt:
           issuer-uri: http://localhost:8081/auth/realms/microservices-realm
           jwk-set-uri: http://localhost:8081/auth/realms/microservices-realm/protocol/openid-connect/certs
+      client:
+        registration:
+          keycloak:
+            client-id: 'elastic-query-service'
+            client-secret: '{cipher}a81a8c5019e01a1ceea9d81a42835c10881aa9466f2f1de3c9a1053ec3c9e6e45b53ff6f505c2a909aa0e8536e5e56f520e3cb29c91db27f76e4ba0b1696f166'
+            authorizationGrantType: client_credentials
+        provider:
+          keycloak:
+            tokenUri: http://localhost:9091/auth/realms/microservices-realm/protocol/openid-connect/token
   jpa:
     open-in-view: false
     show-sql: true
